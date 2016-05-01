@@ -1,0 +1,27 @@
+import React from "react";
+import {Router, Route, Link, browserHistory} from "react-router";
+
+const Home = () => <div><h1>My Home</h1><Links /></div>;
+const About = () => <div><h1>About Us</h1><Links /></div>;
+const Contact = () => <div><h1>Contact Us</h1><Links /></div>;
+
+const Links = () =>
+  <nav>
+    <Link to="/">Home</Link><br />
+    <Link to="/about">About</Link><br />
+    <Link to="/contact">Contact</Link>
+  </nav>
+
+export default class App1 extends React.Component {
+  render() {
+    return (
+      <Router history={browserHistory}>
+        <Route path="/" component={Home}></Route>
+        <Route path="/about" component={About}></Route>
+        <Route path="/contact" component={Contact}></Route>
+      </Router>
+    );
+  }
+}
+
+export default App1;
